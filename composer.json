@@ -1,0 +1,37 @@
+{
+    "name": "daycry/codeigniter-language",
+    "description": "Load language files as array in Codeigniter 4",
+    "keywords":
+    [
+        "language", "array", "javascript", "codeigniter4", "codeigniter"
+    ],
+    "homepage": "https://github.com/daycry/doctrine",
+    "authors":
+    [
+        {
+            "name": "daycry",
+            "homepage": "https://github.com/daycry",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+      "php": ">=7.2",
+        "doctrine/orm": "~2.5",
+        "beberlei/doctrineextensions": "^1.0",
+        "jms/serializer-bundle": "^3.8",
+        "yogarine/doctrine-annotation-autoload": "^0.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Daycry\\Doctrine\\": "src/"
+        }
+    },
+    "scripts":
+    {
+        "post-update-cmd":
+        [
+            "@composer dump-autoload"
+        ]
+    }
+}
