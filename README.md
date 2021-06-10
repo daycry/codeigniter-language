@@ -25,7 +25,7 @@ $psr4 = [
 ## Usage Loading Library
 
 ```php
-$language = new \Daycry\Language\Language( $locale );
+$language = new \Daycry\Language\Language( \Config\Services::request()->getLocale() );
 $language->loadFile( 'Validation' );
 
 var_dump( $language->getTraductions() );
