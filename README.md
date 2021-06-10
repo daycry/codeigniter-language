@@ -1,4 +1,4 @@
-# Doctrine
+# Codeigniter Language
 
 Language for Codeigniter 4
 
