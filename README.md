@@ -41,3 +41,41 @@ $language->loadFile( 'Validation' );
 var_dump( $language->getTraductions() );
 
 ```
+
+# Usage In Views
+
+## Twig
+
+Use the package with composer install
+
+	> composer require daycry/twig
+
+```php
+$this->twig->addGlobal( 'traductions', $this->language->getTraductions() );
+
+```
+
+```javascript
+<script>
+    var traductions = {{ traductions|json_encode|raw }};
+
+    console.log( traductions['File']['string'] );
+</script>
+
+```
+
+## Codeigniter Views
+
+```php
+echo view( 'some_view' );
+
+```
+
+```php
+<script>
+    var traductions = <?php echo json_encode( $this->language->getTraductions() ); ?>;
+
+    console.log( traductions['File']['string'] );
+</script>
+
+```
