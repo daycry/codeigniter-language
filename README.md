@@ -1,6 +1,7 @@
 # Codeigniter Language
 
 Language for Codeigniter 4
+
 Send translation files to Javascript
 
 ## Installation via composer
