@@ -18,7 +18,7 @@ class Language extends \CodeIgniter\Language\Language
 
         $this->load( $file, $this->locale, $return );
 
-        return true;
+        return $this;
     }
 
     public function getTraductions()
