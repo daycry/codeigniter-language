@@ -15,19 +15,63 @@
         }
     ],
     "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-      "php": ">=7.2"
+      "php": ">=8.1"
+    },
+    "require-dev": {
+        "codeigniter/coding-standard": "^1.8",
+        "codeigniter/phpstan-codeigniter": "^1.4",
+        "codeigniter4/devkit": "^1",
+        "codeigniter4/framework": "^4",
+        "ergebnis/composer-normalize": "*",
+        "fakerphp/faker": "^1.9",
+        "friendsofphp/php-cs-fixer": "^3",
+        "icanhazstring/composer-unused": "*",
+        "mikey179/vfsstream": "^1.6",
+        "nexusphp/tachycardia": "*",
+        "phpstan/phpstan-strict-rules": "^2",
+        "phpunit/phpcov": "^10"
     },
     "autoload": {
         "psr-4": {
             "Daycry\\Language\\": "src/"
         }
     },
+    "autoload-dev":
+    {
+        "psr-4":
+        {
+            "Tests\\": "tests/",
+            "Tests\\Support\\": "tests/_support"
+        },
+        "exclude-from-classmap": [
+            "**/Database/Migrations/**",
+            "**/_support/writable/**"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "phpstan/extension-installer": true,
+            "icanhazstring/composer-unused": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
     "scripts":
     {
         "post-update-cmd":
         [
             "@composer dump-autoload"
+        ],
+        "cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix --ansi --verbose --diff",
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/bin/phpunit"
         ]
     }
 }

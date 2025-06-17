@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+    bootstrap="vendor/codeigniter4/framework/system/Test/bootstrap.php"
+    backupGlobals="false"
+    beStrictAboutOutputDuringTests="true"
+    colors="true"
+    columns="max"
+    failOnRisky="true"
+    failOnWarning="true"
+    cacheDirectory="build/.phpunit.cache">
+	<coverage
+		includeUncoveredFiles="true"
+		pathCoverage="false"
+		ignoreDeprecatedCodeUnits="true"
+		disableCodeCoverageIgnore="true">
+		<report>
+			<clover outputFile="build/logs/clover.xml"/>
+			<html outputDirectory="build/coverage/html" highLowerBound="80"/>
+			<text outputFile="build/coverage/coverage.txt"/>
+		</report>
+	</coverage>
+	<extensions>
+		<bootstrap class="Nexus\PHPUnit\Tachycardia\TachycardiaExtension">
+			<parameter name="time-limit" value="0.50" />
+			<parameter name="report-count" value="30" />
+		</bootstrap>
+	</extensions>
+	<source>
+		<include>
+			<directory suffix=".php">./src</directory>
+		</include>
+		<exclude>
+			<directory suffix=".php">./src/Config</directory>
+		</exclude>
+	</source>
+	<testsuites>
+		<testsuite name="main">
+			<directory>./tests</directory>
+		</testsuite>
+	</testsuites>
+	<logging>
+		<testdoxHtml outputFile="build/logs/testdox.html"/>
+		<testdoxText outputFile="build/logs/testdox.txt"/>
+		<junit outputFile="build/logs/logfile.xml"/>
+		<!--<log type="coverage-clover" target="build/logs/clover.xml"/>-->
+	</logging>
+	<php>
+		<server name="app.baseURL" value="http://example.com/"/>
+		<server name="CODEIGNITER_SCREAM_DEPRECATIONS" value="1"/>
+		<env name="app.appTimezone" value="UTC" force="true"/>
+		<!-- Directory containing phpunit.xml -->
+		<const name="HOMEPATH" value="./"/>
+		<!-- Directory containing the Paths config file -->
+		<const name="CONFIGPATH" value="./vendor/codeigniter4/framework/app/Config/"/>
+		<!-- Directory containing the front controller (index.php) -->
+		<const name="PUBLICPATH" value="./vendor/codeigniter4/framework/public/"/>
+		<!-- Directory containing the writable -->
+		<const name="WRITEPATH" value="tests/_support/writable/"/>
+
+		<!-- CACHE -->
+		<env name="cache.handler" value="dummy" force="true"/>
+
+		<!-- API -->
+		<env name="API_TOKEN_HEADER" value="X-API-KEY" force="true"/>
+		<env name="API_TOKEN" value="VqsRBtYehlwmJXap7g7dhd4J9rlgO0wr" force="true"/>
+
+		<!-- ENCRYPTION -->
+		<env name="encryption.key" value="hex2bin:c9a7eac5bfc938e4032baa58e2f584214b0402a7dcef48790213d16b50cce53f" force="true"/>
+	</php>
+</phpunit>
