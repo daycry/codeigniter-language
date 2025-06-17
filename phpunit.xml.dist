@@ -38,10 +38,6 @@
 	<testsuites>
 		<testsuite name="main">
 			<directory>./tests</directory>
-            <exclude>./tests/Language</exclude>
-		</testsuite>
-		<testsuite name="lang">
-			<directory>./tests/Language</directory>
 		</testsuite>
 	</testsuites>
 	<logging>
