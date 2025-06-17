@@ -38,6 +38,10 @@
 	<testsuites>
 		<testsuite name="main">
 			<directory>./tests</directory>
+            <exclude>./tests/Language</exclude>
+		</testsuite>
+		<testsuite name="lang">
+			<directory>./tests/Language</directory>
 		</testsuite>
 	</testsuites>
 	<logging>
@@ -56,17 +60,5 @@
 		<const name="CONFIGPATH" value="./vendor/codeigniter4/framework/app/Config/"/>
 		<!-- Directory containing the front controller (index.php) -->
 		<const name="PUBLICPATH" value="./vendor/codeigniter4/framework/public/"/>
-		<!-- Directory containing the writable -->
-		<const name="WRITEPATH" value="tests/_support/writable/"/>
-
-		<!-- CACHE -->
-		<env name="cache.handler" value="dummy" force="true"/>
-
-		<!-- API -->
-		<env name="API_TOKEN_HEADER" value="X-API-KEY" force="true"/>
-		<env name="API_TOKEN" value="VqsRBtYehlwmJXap7g7dhd4J9rlgO0wr" force="true"/>
-
-		<!-- ENCRYPTION -->
-		<env name="encryption.key" value="hex2bin:c9a7eac5bfc938e4032baa58e2f584214b0402a7dcef48790213d16b50cce53f" force="true"/>
 	</php>
 </phpunit>
