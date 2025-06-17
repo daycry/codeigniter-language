@@ -1,4 +1,13 @@
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?business=SYC5XDT23UZ5G&no_recurring=0&item_name=Thank+you%21&currency_code=EUR)
+
 # Codeigniter Language
+
+[![Build status](https://github.com/daycry/codeigniter-language/actions/workflows/phpunit.yml/badge.svg?branch=main)](https://github.com/daycry/codeigniter-language/actions/workflows/phpunit.yml)
+[![Coverage Status](https://coveralls.io/repos/github/daycry/codeigniter-language/badge.svg?branch=main)](https://coveralls.io/github/daycry/codeigniter-language?branch=main)
+[![Downloads](https://poser.pugx.org/daycry/codeigniter-language/downloads)](https://packagist.org/packages/daycry/codeigniter-language)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/daycry/codeigniter-language)](https://packagist.org/packages/daycry/codeigniter-language)
+[![GitHub stars](https://img.shields.io/github/stars/daycry/codeigniter-language)](https://packagist.org/packages/daycry/codeigniter-language)
+[![GitHub license](https://img.shields.io/github/license/daycry/codeigniter-language)](https://github.com/daycry/codeigniter-language/blob/main/LICENSE)
 
 Language for Codeigniter 4
 
